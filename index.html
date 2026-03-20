@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>九州の旅 — Kyushu Journey · 9–15 April 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&amp;family=Shippori+Mincho:wght@400;600;800&amp;family=DM+Mono:wght@300;400&amp;display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --paper: #f5f0e8;
+    --warm: #f0e6d0;
+    --red: #c0392b;
+    --gold: #b8860b;
+    --muted: #7a6a58;
+    --border: #d4c8b0;
+    --onsen: #3d6b7a;
+    --food: #7a4a2a;
+    --accent: #8b1a1a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 300;
+    line-height: 1.7;
+    font-size: 14px;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 60px 40px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '旅';
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 200px;
+    font-weight: 800;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+  }
+
+  .header-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .header h1 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .header h2 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgba(245,240,232,0.6);
+    margin-bottom: 36px;
+  }
+
+  .header-meta {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    border-left: 2px solid var(--gold);
+    padding-left: 12px;
+  }
+
+  .meta-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.5);
+    margin-bottom: 2px;
+  }
+
+  .meta-value {
+    font-size: 13px;
+    color: var(--paper);
+    font-weight: 400;
+  }
+
+  /* LOGISTICS STRIP */
+  .logistics {
+    background: var(--warm);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .log-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .log-icon {
+    font-size: 18px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .log-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .log-value {
+    font-size: 12.5px;
+    color: var(--ink);
+    font-weight: 400;
+  }
+
+  /* MAIN CONTENT */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 40px;
+  }
+
+  /* SECTION HEADINGS */
+  .section-heading {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 48px 0 24px;
+  }
+
+  .section-heading h2 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .section-kanji {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* DAY CARDS */
+  .day-card {
+    border: 1px solid var(--border);
+    margin-bottom: 20px;
+    background: white;
+    overflow: hidden;
+  }
+
+  .day-header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .day-number {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--gold);
+    min-width: 32px;
+  }
+
+  .day-title-block {}
+
+  .day-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: rgba(245,240,232,0.5);
+    text-transform: uppercase;
+  }
+
+  .day-title {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .day-toggle {
+    margin-left: auto;
+    font-size: 18px;
+    color: rgba(245,240,232,0.4);
+    transition: transform 0.3s;
+  }
+
+  .day-toggle.open { transform: rotate(180deg); }
+
+  .day-body {
+    display: none;
+    padding: 0;
+  }
+
+  .day-body.open { display: block; }
+
+  /* TIMELINE */
+  .timeline {
+    padding: 20px 20px 20px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 0 16px;
+    margin-bottom: 0;
+    position: relative;
+  }
+
+  .timeline-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 72px;
+    top: 26px;
+    bottom: -4px;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .time-col {
+    text-align: right;
+    padding-top: 4px;
+  }
+
+  .time-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  .content-col {
+    padding: 4px 0 20px 16px;
+  }
+
+  .activity-name {
+    font-weight: 600;
+    font-size: 13.5px;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+
+  .activity-note {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .activity-dot {
+    position: absolute;
+    left: 68px;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 2px solid var(--border);
+    z-index: 1;
+    flex-shrink: 0;
+  }
+
+  .activity-dot.onsen { border-color: var(--onsen); background: var(--onsen); }
+  .activity-dot.food { border-color: var(--food); background: var(--food); }
+  .activity-dot.transport { border-color: var(--gold); background: var(--gold); }
+  .activity-dot.sight { border-color: var(--accent); background: var(--accent); }
+  .activity-dot.shop { border-color: var(--muted); background: var(--muted); }
+
+  /* TAGS */
+  .tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 2px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+  }
+
+  .tag-onsen { background: rgba(61,107,122,0.12); color: var(--onsen); }
+  .tag-food { background: rgba(122,74,42,0.12); color: var(--food); }
+  .tag-sight { background: rgba(139,26,26,0.12); color: var(--accent); }
+  .tag-drive { background: rgba(184,134,11,0.12); color: var(--gold); }
+
+  /* MAP LINK */
+  .map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--onsen);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border: 1px solid var(--onsen);
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .map-link:hover { background: var(--onsen); color: white; }
+
+  /* COST BAR */
+  .cost-bar {
+    background: var(--warm);
+    border-top: 1px solid var(--border);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cost-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .cost-value {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--ink);
+    font-weight: 400;
+  }
+
+  /* SUMMARY TABLES */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 8px;
+  }
+
+  @media (max-width: 640px) {
+    .summary-grid { grid-template-columns: 1fr; }
+  }
+
+  .summary-card {
+    border: 1px solid var(--border);
+    background: white;
+    overflow: hidden;
+  }
+
+  .summary-card-header {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .summary-card-header.onsen { background: rgba(61,107,122,0.08); }
+  .summary-card-header.food { background: rgba(122,74,42,0.08); }
+
+  .summary-icon { font-size: 20px; }
+
+  .summary-card-title {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+
+  .summary-table tr { border-bottom: 1px solid var(--border); }
+  .summary-table tr:last-child { border-bottom: none; }
+
+  .summary-table td {
+    padding: 9px 14px;
+    vertical-align: top;
+    line-height: 1.4;
+  }
+
+  .summary-table td:first-child {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--muted);
+    white-space: nowrap;
+    width: 60px;
+    padding-top: 11px;
+  }
+
+  .summary-table .highlight {
+    font-weight: 600;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 1px;
+  }
+
+  .summary-table .sub {
+    color: var(--muted);
+    font-size: 11px;
+  }
+
+  .onsen-entry {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--onsen);
+    background: rgba(61,107,122,0.08);
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 2px;
+    margin-top: 2px;
+  }
+
+  /* PRINT */
+  @media print {
+    .day-body { display: block !important; }
+    .day-toggle { display: none; }
+    .day-header { cursor: default; }
+    body { font-size: 11px; }
+    .header { padding: 40px 30px; }
+    .container { padding: 20px 30px; }
+  }
+
+  .notice {
+    background: rgba(184,134,11,0.1);
+    border-left: 3px solid var(--gold);
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-size: 11.5px;
+    color: var(--ink);
+  }
+
+  .notice strong { color: var(--gold); }
+</style>
+  <meta property="og:title" content="九州の旅 — Kyushu Journey April 2026">
+  <meta property="og:description" content="7-day self-drive Kyushu itinerary: Fukuoka, Dazaifu, Itoshima, Nagasaki, Karatsu, Yanagawa, Beppu and Yufuin. Onsen every day.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#1a1410">
+</head>
+<body>
+<!-- PUBLIC ACTION BAR -->
+<div style="background:#1a1410;padding:10px 20px;display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,0.4);">
+  <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.14em;color:#b8860b;font-weight:bold;">九州の旅</span>
+  <span style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(245,240,232,0.35);letter-spacing:0.08em;">9–15 APRIL 2026</span>
+  <div style="margin-left:auto;display:flex;gap:8px;">
+    <button onclick="expandAll()" id="expand-btn" style="background:transparent;color:rgba(245,240,232,0.65);border:1px solid rgba(245,240,232,0.2);padding:5px 12px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">Expand All</button>
+    <button onclick="shareItinerary()" id="share-btn" style="background:#b8860b;color:#1a1410;border:none;padding:5px 14px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-weight:bold;">⬆ Share</button>
+    <button onclick="window.print()" style="background:transparent;color:rgba(245,240,232,0.65);border:1px solid rgba(245,240,232,0.2);padding:5px 12px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">🖨 Print</button>
+  </div>
+</div>
+
+
+
+<div style="height:44px;"></div>
+
+
+
+<div class="header">
+  <div class="header-tag">Self-Drive Kyushu — Itinerary</div>
+  <h1>九州の旅<br>Kyushu Trip</h1>
+  <h2>9 April — 15 April 2026</h2>
+  <div class="header-meta">
+    <div class="meta-item">
+      <div class="meta-label">Flight In</div>
+      <div class="meta-value" contenteditable="false" style="outline: none;">HK Express UO668 → Lands 15:10 on 9 Apr</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Flight Out</div>
+      <div class="meta-value" contenteditable="false" style="outline: none;">HK Express UO695 → Departs 20:45 on 15 Apr</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Base</div>
+      <div class="meta-value" contenteditable="false" style="outline: none;">サンヒルズマンション, Tosu, Saga — 6 nights</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Car Rental</div>
+      <div class="meta-value" contenteditable="false" style="outline: none;">Times Car — Pickup&nbsp; from 16:00 / Return by 16:00 on 15 Apr</div>
+    </div>
+  </div>
+</div>
+
+<div class="logistics">
+  <div class="log-item">
+    <div class="log-icon">🚗</div>
+    <div>
+      <div class="log-label">Car Rental</div>
+      <div class="log-value" contenteditable="false" style="outline: none;">Times Car Rental, Fukuoka Airport Int'l Terminal<br>Honda Freed — A$330 for 6 days (confirmed)</div>
+    </div>
+  </div>
+  <div class="log-item">
+    <div class="log-icon">🏠</div>
+    <div>
+      <div class="log-label">Accommodation</div>
+      <div class="log-value" contenteditable="false" style="outline: none;">サンヒルズマンション, Tosu (Saga)<br>Check-out 10:00am daily</div>
+    </div>
+  </div>
+  </div>
+  
+
+
+<div class="container">
+
+  <!-- DAY CARDS -->
+
+  <!-- DAY 1 -->
+  <div class="section-heading" style="margin-top:0">
+    <h2>Daily Itinerary</h2>
+    <div class="section-line"></div>
+    <div class="section-kanji">日程</div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-header" onclick="toggleDay(this)">
+      <div class="day-number">01</div>
+      <div class="day-title-block">
+        <div class="day-date" contenteditable="false" style="outline: none;">Wednesday 9 April</div>
+        <div class="day-title" contenteditable="false" style="outline: none;">Arrive Fukuoka → Dazaifu Shrine → First Bathhouse</div>
+      </div>
+      <div class="day-toggle open">▼</div>
+    </div>
+    <div class="day-body open">
+      <div class="day-highlight" style="height:180px;background:linear-gradient(to bottom, rgba(26,20,16,0.3), rgba(26,20,16,0.6)), url('https://images.unsplash.com/photo-1522383225653-ed111181a951?w=960&amp;q=80') center/cover no-repeat;display:flex;align-items:flex-end;padding:16px 20px;"><span style="color:rgba(245,240,232,0.7);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;">📍 Wednesday 9 April</span></div>
+        <div class="timeline">
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">15:10</div></div>
+          <div class="content-col">
+            <div class="activity-dot transport"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">✈️ Land Fukuoka Airport — UO668</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;"><br></div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">16:00</div></div>
+          <div class="content-col">
+            <div class="activity-dot transport"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🚗 Times Car Rental Pickup</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Times counter at International Terminal. Shuttle to car collection. Collect ETC card.</div>
+            <a class="map-link" href="https://maps.google.com/?q=Fukuoka+Airport+International+Terminal" target="_blank">📍 Map</a>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">16:15</div></div>
+          <div class="content-col">
+            <div class="activity-dot food"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🍜 ShinShin Hakata DEITOS — First Ramen in Japan</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Inside Hakata Station — 2 min from airport. Fukuoka's most-loved local ramen. Light yet rich tonkotsu broth with no heavy pork smell, thin noodles (order firm/kata), silky chashu. Also try the yakimeshi fried rice. ~¥900. Open daily until 11pm — Wednesday branch is open when Tenjin branch is not.</div>
+            <a class="map-link" href="https://maps.google.com/?cid=7420894295949950088" target="_blank">📍 Map</a>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">17:15</div></div>
+          <div class="content-col">
+            <div class="activity-dot sight"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">⛩️ Dazaifu Tenmangu Shrine</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">One of Kyushu's most important Shinto shrines. Ancient camphor trees, peak cherry blossoms. Try umegaemochi rice cakes. Free entry. Open until 6:30pm — arriving at 17:15 gives ~75 mins, plenty of time. Flat paved path throughout.</div>
+            <a class="map-link" href="https://maps.google.com/?cid=13268960937318002327" target="_blank">📍 Map</a>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">19:00</div></div>
+          <div class="content-col">
+            <div class="activity-dot onsen"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🛁 筑紫野温泉 アマンディ&nbsp;</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Bali-inspired onsen spa, 10 min from Dazaifu. Multiple pools, private rooms available, restaurant on-site. ~¥800. Open until midnight.</div>
+            <a class="map-link" href="https://maps.google.com/?cid=9700539435163361154" target="_blank">📍 Map</a>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">20:45</div></div>
+          <div class="content-col">
+            <div class="activity-dot food"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🍶 Dinner — Local Tosu Izakaya</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Settle in to サンヒルズマンション. Dinner at neighbourhood izakaya near Tosu — yakitori, sashimi, cold beer. ~¥3,000/person.</div>
+          </div>
+        </div>
+      </div>
+      <div class="cost-bar">
+        <div class="cost-label">Estimated daily spend (excl. car/accommodation)</div>
+        <div class="cost-value" contenteditable="false" style="outline: none;">~¥5,500–7,000/person</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day-card">
+    <div class="day-header" onclick="toggleDay(this)">
+      <div class="day-number">02</div>
+      <div class="day-title-block">
+        <div class="day-date" contenteditable="false" style="outline: none;">Thursday 10 April</div>
+        <div class="day-title" contenteditable="false" style="outline: none;">Fukuoka City → Ohori Park → LaLaport → Namiha Onsen → Nakasu by Train</div>
+      </div>
+      <div class="day-toggle open">▼</div>
+    </div>
+    <div class="day-body open">
+      <div class="day-highlight" style="height:180px;background:linear-gradient(to bottom, rgba(26,20,16,0.3), rgba(26,20,16,0.6)), url('https://images.unsplash.com/photo-1601823984263-b87b59798b70?w=960&amp;q=80') center/cover no-repeat;display:flex;align-items:flex-end;padding:16px 20px;"><span style="color:rgba(245,240,232,0.7);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;">📍 Thursday 10 April</span></div>
+        <div class="timeline">
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">8:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot transport"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🚗 Depart Tosu → Fukuoka</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">~40 min drive north to Ohori Park.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">9:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot sight"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🌸 Ohori Park</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Peak cherry blossom — flat 2km lake loop, swan boats, Kusama pumpkin. Starbucks lakeside. Free entry.</div>
+            <a class="map-link" href="https://maps.google.com/?cid=14839213291318671256" target="_blank">📍 Map</a>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">11:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot food"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🐟 Lunch — Kurodahan, Daimyo</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">4.9★ from nearly 2,000 reviews — one of Fukuoka's most celebrated seafood rice bowl restaurants. Signature bluefin tuna bowl and otoro melt in the mouth. Mixed maguro bowl highly recommended. ~¥2,000–3,000/person. 10 min walk from Ohori Park. Thursday ✅ (closed Mon &amp; Tue). ⚠️ Lunch booking n/a, expect to queue.</div>
+            <a class="map-link" href="https://maps.google.com/?cid=9169763927243988798" target="_blank">📍 Map</a>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">13:00</div></div>
+          <div class="content-col">
+            <div class="activity-dot sight"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🤖 Gundam Park / LaLaport Fukuoka</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Life-size Gundam — light/sound show on the hour outside. Japanese retail, browse inside. Validated parking.</div>
+            <a class="map-link" href="https://maps.google.com/?cid=2847007603474523245" target="_blank">📍 Map</a>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">15:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot onsen"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🛁 Minato Onsen Namiha no Yu&nbsp;</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Best public onsen in Fukuoka city. Multiple pools, sauna, bay night views. ~¥1,250. Free parking with validation. Thursday = ladies discount.</div>
+            <a class="map-link" href="https://maps.google.com/?cid=7354804000981347588" target="_blank">📍 Map</a>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">17:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot transport"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🚗 Drive back to Tosu — Park Car</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">~40 min. Park car at accommodation. Walk/taxi to Tosu Station. JR Kagoshima Main Line → Hakata ~30 min, ~¥500/person. Check last train time before going (~midnight).</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">18:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot food"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🏮 Nakasu Yatai — Arrive at 6pm Opening</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">15 min walk from Hakata Station. Mentaiko, yakitori, ramen, highball. Everyone drinks freely — no driving tonight. ~¥3,000–4,000/person.</div>
+            <a class="map-link" href="https://maps.google.com/?cid=3631032779592845487" target="_blank">📍 Map</a>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">20:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot food"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🍢 Nakasu Oden (Late Night)</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Only 11 seats, run by a lovely old couple. Deep umami broth, cabbage rolls, sake. Open until 1am. Korean/Japanese menu. May need to wait — worth it. JR back to Tosu before midnight.</div>
+            <a class="map-link" href="https://maps.google.com/?cid=12087161540444260252" target="_blank">📍 Map</a>
+          </div>
+        </div>
+      </div>
+      <div class="cost-bar">
+        <div class="cost-label">Estimated daily spend (excl. car/accommodation)</div>
+        <div class="cost-value" contenteditable="false" style="outline: none;">~¥9,000–11,000/person</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="day-card">
+    <div class="day-header" onclick="toggleDay(this)">
+      <div class="day-number">03</div>
+      <div class="day-title-block">
+        <div class="day-date" contenteditable="false" style="outline: none;">Friday 11 April</div>
+        <div class="day-title" contenteditable="false" style="outline: none;">Itoshima Coast — Sacred Torii, Oyster BBQ &amp; Seaside Coffee</div>
+      </div>
+      <div class="day-toggle open">▼</div>
+    </div>
+    <div class="day-body open">
+      <div class="day-highlight" style="height:180px;background:linear-gradient(to bottom, rgba(26,20,16,0.3), rgba(26,20,16,0.6)), url('https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=960&amp;q=80') center/cover no-repeat;display:flex;align-items:flex-end;padding:16px 20px;"><span style="color:rgba(245,240,232,0.7);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;">📍 Friday 11 April</span></div>
+        <div class="timeline">
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">8:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot transport"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🚗 Depart Tosu → Itoshima, Keya Coast</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">~1 hr drive northwest. Head directly to Keya Port area — Shirahamaya and Keya no Oto sea cave are both here. Low tide forecast ~2pm — plan to be at the Torii by 1:45pm for best access.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">9:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot sight"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🌊 Keya no Oto Sea Cave</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">One of Japan's largest sea caves — dramatic lava rock formations carved by waves. Flat coastal park walks and viewpoints. Optional boat ride into the cave (small fee, weather dependent). Free entry to park. Open 9am–4:30pm. Right next to Shirahamaya — perfect way to fill time before lunch.</div>
+            <a class="map-link" href="https://maps.google.com/?cid=5439018958014636878" target="_blank">📍 Map</a>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">11:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot food"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🦪 Lunch — Hamayaki Shirahamaya, Keya Port</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Best oyster BBQ in Itoshima — stylish open-air ocean terrace right at the water's edge. Gas-fired roasters (no smoke smell on hair or clothes). Live seafood tank — fresh Itoshima oysters, scallops, squid from Yobuko, Goto prawns. English menu. ~¥3,000–5,000/person. Open until 9pm. ⚠️ Book ahead: +81 92-328-3282</div>
+            <a class="map-link" href="https://maps.google.com/?cid=13133278060996125792" target="_blank">📍 Map</a>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">13:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot transport"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🚗 Drive Keya → Futamigaura</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">~15 min drive north along the coast. Arrive just before low tide at 2pm.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">13:45</div></div>
+          <div class="content-col">
+            <div class="activity-dot sight"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">⛩️ Sakurai Futamigaura Couple Stones &amp; Torii</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Sacred rocks fully exposed, best access and photos of the trip. Sacred rocks joined by shimenawa rope, iconic floating torii gate in the sea. Free entry.</div>
+            <a class="map-link" href="https://maps.google.com/?cid=12452503795033004583" target="_blank">📍 Map</a>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">15:00</div></div>
+          <div class="content-col">
+            <div class="activity-dot sight"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">☕ Beach Cafe SUNSET — Ocean View Coffee</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">5 min drive from Torii. Ocean terrace, watch the sea. Open until 8pm. Friday ✅ (closed Thursdays).</div>
+            <a class="map-link" href="https://maps.google.com/?cid=4208539844075716497" target="_blank">📍 Map</a>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">16:00</div></div>
+          <div class="content-col">
+            <div class="activity-dot transport"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🚗 Drive back toward Tosu via Kurume</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">~1 hr drive southeast. Stop at Yunosakakurume on the way.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">17:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot onsen"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🛁 Yunosakakurume Hot Spring</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Authentic local onsen, 30 min south of Tosu. Outdoor garden bath with waterfall, indoor pools, sauna. ~¥880. Open until 1am. Very local crowd, excellent silky mineral water.</div>
+            <a class="map-link" href="https://maps.google.com/?cid=17301970214843314909" target="_blank">📍 Map</a>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">19:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot food"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🍶 Dinner — Neighbourhood Izakaya near Tosu</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Fresh sashimi, yakitori, cold beer. ~¥3,000/person.</div>
+          </div>
+        </div>
+      </div>
+      <div class="cost-bar">
+        <div class="cost-label">Estimated daily spend (excl. car/accommodation)</div>
+        <div class="cost-value" contenteditable="false" style="outline: none;">~¥8,000–10,000/person</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 4 -->
+  <div class="day-card">
+    <div class="day-header" onclick="toggleDay(this)">
+      <div class="day-number">04</div>
+      <div class="day-title-block">
+        <div class="day-date" contenteditable="false" style="outline: none;">Saturday 12 April</div>
+        <div class="day-title" contenteditable="false" style="outline: none;">Nagasaki — Atomic History, Fishmonger Sashimi &amp; Japan's Top Night View</div>
+      </div>
+      <div class="day-toggle open">▼</div>
+    </div>
+    <div class="day-body open">
+      <div class="day-highlight" style="height:180px;background:linear-gradient(to bottom, rgba(26,20,16,0.3), rgba(26,20,16,0.6)), url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=960&amp;q=80') center/cover no-repeat;display:flex;align-items:flex-end;padding:16px 20px;"><span style="color:rgba(245,240,232,0.7);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;">📍 Saturday 12 April</span></div>
+        <div class="timeline">
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">8:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot transport"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🚗 Depart Tosu → Nagasaki</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">~1.5 hr drive west on expressway.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">10:00</div></div>
+          <div class="content-col">
+            <div class="activity-dot sight"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🕊️ Hypocenter Park + Atomic Bomb Museum</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Atomic bomb ground zero — free entry to park. ¥200 museum. Combine with Peace Park (5 min walk). Deeply moving. Allow 1–1.5 hrs.</div>
+            <a class="map-link" href="https://maps.google.com/?cid=13793178866611635612" target="_blank">📍 Map</a>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">11:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot food"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🐟 Lunch — Koda Shokudo (Fishmonger Restaurant)</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Run directly by a fishmonger — exceptional freshness. Sashimi set meal from ¥1,500. Famous for Nagasaki aji (horse mackerel) and fried whiting. Lunch only 11:30am–2pm. Saturday ✅ (Closed Sundays).</div>
+            <a class="map-link" href="https://maps.google.com/?cid=11531329103670544805" target="_blank">📍 Map</a>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">13:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot sight"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🏯 Glover Garden</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Historic Western-style mansion gardens on a hillside — sweeping harbour views. ¥620 entry. Moving walkways going up — no strenuous walking. April cherry blossoms.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">15:00</div></div>
+          <div class="content-col">
+            <div class="activity-dot sight"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🚶 Explore Nagasaki Old Town</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Dejima Dutch trading post, local coffee, easy walk before the night viewing.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">18:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot sight"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🌃 Inasa-yama Night View</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">One of Japan's top 3 night views — Nagasaki harbour from 333m. Ropeway ¥500 return. Go at dusk to catch golden hour + night panorama. Restaurant at top.</div>
+            <a class="map-link" href="https://maps.google.com/?cid=15208710809067822138" target="_blank">📍 Map</a>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">20:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot transport"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🚗 Drive Nagasaki → Tosu</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">~1.5 hrs. Arrive ~10pm.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">22:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot onsen"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🛁 Izuminoyu Kurume</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Private group onsen pool, open until 3am. ~¥1,200/group. Tattoo friendly. Perfect after a long day. Book ahead if possible.</div>
+            <a class="map-link" href="https://maps.google.com/?cid=15538976350885431489" target="_blank">📍 Map</a>
+          </div>
+        </div>
+      </div>
+      <div class="cost-bar">
+        <div class="cost-label">Estimated daily spend (excl. car/accommodation)</div>
+        <div class="cost-value" contenteditable="false" style="outline: none;">~¥7,000–9,000/person</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 5 -->
+  <div class="day-card">
+    <div class="day-header" onclick="toggleDay(this)">
+      <div class="day-number">05</div>
+      <div class="day-title-block">
+        <div class="day-date" contenteditable="false" style="outline: none;">Sunday 13 April</div>
+        <div class="day-title" contenteditable="false" style="outline: none;">Karatsu Castle Town + Yanagawa Canal Boat — Easy Sunday</div>
+      </div>
+      <div class="day-toggle open">▼</div>
+    </div>
+    <div class="day-body open">
+      <div class="day-highlight" style="height:180px;background:linear-gradient(to bottom, rgba(26,20,16,0.3), rgba(26,20,16,0.6)), url('https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=960&amp;q=80') center/cover no-repeat;display:flex;align-items:flex-end;padding:16px 20px;"><span style="color:rgba(245,240,232,0.7);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;">📍 Sunday 13 April</span></div>
+        <div class="timeline">
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">9:00</div></div>
+          <div class="content-col">
+            <div class="activity-dot transport"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🚗 Depart Tosu → Karatsu</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">~1 hr drive west on Route 263.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">9:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot sight"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🏯 Karatsu Castle</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Coastal castle on a headland above the sea — ¥200, panoramic sea views, elevator available. 200-year-old wisteria tree in full April bloom at the entrance. Browse Karatsu-yaki pottery shops along the approach — unique, lightweight gifts.</div>
+            <a class="map-link" href="https://maps.google.com/?cid=5559773744352915527" target="_blank">📍 Map</a>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">11:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot food"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🦑 Lunch — Fresh Ika (Squid) Sashimi, Karatsu Harbour</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Karatsu is famous for ultra-fresh squid sashimi. Find a local restaurant near the castle or harbour. Search イカ料理 (ika ryori) on Google Maps. ~¥1,500–2,500/person.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">13:00</div></div>
+          <div class="content-col">
+            <div class="activity-dot transport"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🚗 Drive Karatsu → Yanagawa</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">~1 hr south. Arrive by 2pm for the canal boat.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">14:00</div></div>
+          <div class="content-col">
+            <div class="activity-dot sight"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🚣 Yanagawa Canal Boat — Donko-bune</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">70-min flat-bottomed boat punted through willow-lined canals — ~¥2,000/person. Boatman sings traditional songs. No reservation needed — boats leave when full. Last boat 3pm, arrive by 2pm. Free shuttle bus from Yanagawa Station.</div>
+            <a class="map-link" href="https://maps.google.com/?cid=16864418286284900470" target="_blank">📍 Map</a>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">16:00</div></div>
+          <div class="content-col">
+            <div class="activity-dot food"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🍱 Early Dinner — Yanagawa Unaju (Grilled Eel over Rice)</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Yanagawa's signature dish — rich, smoky, deeply satisfying. Find a riverside restaurant after the boat. Drive back to Tosu after (~30 min), home by ~5:30pm.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">18:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot onsen"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🛁 筑紫野温泉 アマンディ&nbsp;</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Second visit — on the way home from Yanagawa. Bali-inspired garden onsen, private rooms available. ~¥800. Open until midnight.</div>
+            <a class="map-link" href="https://maps.google.com/?cid=9700539435163361154" target="_blank">📍 Map</a>
+          </div>
+        </div>
+      </div>
+      <div class="cost-bar">
+        <div class="cost-label">Estimated daily spend (excl. car/accommodation)</div>
+        <div class="cost-value" contenteditable="false" style="outline: none;">~¥8,000–10,000/person</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 6 -->
+  <div class="day-card">
+    <div class="day-header" onclick="toggleDay(this)">
+      <div class="day-number">06</div>
+      <div class="day-title-block">
+        <div class="day-date" contenteditable="false" style="outline: none;">Monday 14 April</div>
+        <div class="day-title" contenteditable="false" style="outline: none;">Beppu Hell Springs → Hyotan Onsen (Michelin ★★★) → Yufuin Stroll</div>
+      </div>
+      <div class="day-toggle open">▼</div>
+    </div>
+    <div class="day-body open">
+      <div class="day-highlight" style="height:180px;background:linear-gradient(to bottom, rgba(26,20,16,0.3), rgba(26,20,16,0.6)), url('https://images.unsplash.com/photo-1504109586057-7a2ae83d1338?w=960&amp;q=80') center/cover no-repeat;display:flex;align-items:flex-end;padding:16px 20px;"><span style="color:rgba(245,240,232,0.7);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;">📍 Monday 14 April</span></div>
+        <div class="timeline">
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">8:00</div></div>
+          <div class="content-col">
+            <div class="activity-dot transport"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🚗 Depart Tosu → Beppu</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">~1.5 hr drive south on Kyushu Expressway.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">9:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot sight"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🌋 Jigoku Meguri — Hell Springs Tour</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">8 volcanic hell pools: cobalt blue (Umi Jigoku), blood red (Chinoike), boiling grey mud (Oniyama), crocodile farm and more. ~¥2,200 combined ticket. All flat paths. Allow 1.5–2 hrs.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">11:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot food"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🍱 Lunch — Restaurant Yurari at Hyotan Onsen</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Ryukyu raw fish rice bowl ¥1,300 (local Oita marinated fresh fish over rice — recommended). Or jigoku steam kitchen: cook your own crab legs over live geothermal steam. Oita beef bowl ¥1,200 also excellent.</div>
+            <a class="map-link" href="https://maps.google.com/?cid=8899495308519393039" target="_blank">📍 Map</a>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">12:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot onsen"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🛁 Hyotan Onsen Public Baths — ⭐ Michelin 3-Star</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Split by gender — both sides equally impressive.<br><br>
+              ♀️ <strong>Women:</strong> Open-air baths, indoor baths, waterfall bath (takiyu), steam bath, iconic gourd-shaped hyotan tub<br>
+              ♂️ <strong>Men:</strong> 9 different baths — indoor, outdoor, sand bath, waterfall, steam room, cold plunge<br><br>
+              Entry: ¥1,020/person. Sand bath: +¥760 (yukata rental included, buried in hot spring-heated sand — no time limit, deeply relaxing). Allow 1.5 hrs minimum.<br><br>
+              After bathing: regroup in shared tatami rest area.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">14:15</div></div>
+          <div class="content-col">
+            <div class="activity-dot food"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🍮 Onsen Steam Pudding + 🍦 Kabosu Soft Serve</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Steam pudding made fresh daily with hot spring steam ~¥400. Then the famous kabosu (local citrus) soft serve ice cream ~¥400. Both sold at Hyotan — don't leave without trying both.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">15:00</div></div>
+          <div class="content-col">
+            <div class="activity-dot transport"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🚗 Drive Beppu → Yufuin</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">~30 min drive through mountain scenery.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">15:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot sight"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🏞️ Lake Kinrin, Yufuin</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Hot spring-fed lake — misty, serene, Mt Yufu backdrop. Flat shore path (10 mins). Ukiha Shrine on the water's edge. Beautiful late afternoon light.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">16:15</div></div>
+          <div class="content-col">
+            <div class="activity-dot sight"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🛍️ Yunotsubo Kaido Street, Yufuin</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Wagyu beef skewer on a stick, tofu soft serve, local craft shops and small cafes. Very flat and pleasant. Drive back to Tosu after (~2 hrs, home ~7:30pm).</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">19:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot food"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🍶 Dinner — Robata Grill or Seafood Izakaya near Tosu</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Well-deserved after the trip's best day. Robata-grilled seafood, sake. ~¥3,000–4,000/person.</div>
+          </div>
+        </div>
+      </div>
+      <div class="notice" contenteditable="false" style="outline: none;"><strong>Note:</strong> Hyotan Onsen is open 9am–midnight — no booking required for public baths, just arrive. Budget ~3 hrs at Hyotan total (lunch + baths + post-soak relaxation).</div>
+      <div class="cost-bar">
+        <div class="cost-label">Estimated daily spend (excl. car/accommodation)</div>
+        <div class="cost-value" contenteditable="false" style="outline: none;">~¥10,000–12,000/person</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 7 -->
+  <div class="day-card">
+    <div class="day-header" onclick="toggleDay(this)">
+      <div class="day-number">07</div>
+      <div class="day-title-block">
+        <div class="day-date" contenteditable="false" style="outline: none;">Tuesday 15 April</div>
+        <div class="day-title" contenteditable="false" style="outline: none;">Check Out → Final Onsen → Tosu Outlets → Kurume Ramen → Home</div>
+      </div>
+      <div class="day-toggle open">▼</div>
+    </div>
+    <div class="day-body open">
+      <div class="day-highlight" style="height:180px;background:linear-gradient(to bottom, rgba(26,20,16,0.3), rgba(26,20,16,0.6)), url('https://images.unsplash.com/photo-1614094082869-cd4e4b2905c7?w=960&amp;q=80') center/cover no-repeat;display:flex;align-items:flex-end;padding:16px 20px;"><span style="color:rgba(245,240,232,0.7);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;">📍 Tuesday 15 April</span></div>
+        <div class="timeline">
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">8:00</div></div>
+          <div class="content-col">
+            <div class="activity-dot transport"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🧳 Pack Up — Check Out by 10:00am</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Load all luggage into car before 10am checkout.&nbsp;</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">10:00</div></div>
+          <div class="content-col">
+            <div class="activity-dot onsen"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🛁 Izuminoyu Kurume</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">1hr farewell soak before the airport run. Silky water quality. ~¥1,200/group.</div>
+            <a class="map-link" href="https://maps.google.com/?cid=15538976350885431489" target="_blank">📍 Map</a>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">11:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot shop"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🛍️ Tosu Premium Outlets</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">~170 brands — 5 min from Izuminoyu. Last-minute gifts, mentaiko, clothing deals. Excellent food court. Free parking. Open from 10am.</div>
+            <a class="map-link" href="https://maps.google.com/?cid=14382326322032179935" target="_blank">📍 Map</a>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">13:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot food"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🍜 Alternative Farewell Lunch — Hakata-ya Ramen, Kurume</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Kurume-style tonkotsu ramen — thicker and richer than Hakata style, the original. Open 24hrs. ~¥800. Quick, satisfying send-off before the airport.</div>
+            <a class="map-link" href="https://maps.google.com/?cid=12745915603611978135" target="_blank">📍 Map</a>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">15:00</div></div>
+          <div class="content-col">
+            <div class="activity-dot transport"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🚗 Drive to Fukuoka Airport</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">~40 min. Arrive by 4pm for car return.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">16:00</div></div>
+          <div class="content-col">
+            <div class="activity-dot transport"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">🚗 Times Car Rental Drop-Off</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">Allow 30 mins for car return paperwork. Pack mentaiko properly in checked luggage.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time-col"><div class="time-label">16:30</div></div>
+          <div class="content-col">
+            <div class="activity-dot transport"></div>
+            <div class="activity-name" contenteditable="false" style="outline: none;">✈️ Check In for UO695 — Departs 20:45</div>
+            <div class="activity-note" contenteditable="false" style="outline: none;">4+ hrs buffer — very relaxed. Dinner at airport Japanese restaurant or Aeon Mall next door. Gate closes ~20:15.</div>
+          </div>
+        </div>
+      </div>
+      <div class="cost-bar">
+        <div class="cost-label">Estimated daily spend (excl. car/accommodation)</div>
+        <div class="cost-value" contenteditable="false" style="outline: none;">~¥4,000–5,000/person</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOD SUMMARY -->
+  <div class="section-heading">
+    <h2>Food Summary</h2>
+    <div class="section-line"></div>
+    <div class="section-kanji">食事</div>
+  </div>
+
+  <div class="summary-card">
+    <div class="summary-card-header food">
+      <div class="summary-icon">🍜</div>
+      <div class="summary-card-title">All 7 Days — Meals &amp; Highlights</div>
+    </div>
+    <table class="summary-table">
+      <tbody><tr>
+        <td contenteditable="false" style="outline: none;">DAY 1<br>Wed</td>
+        <td contenteditable="false" style="outline: none;"><span class="highlight">Ramen — ShinShin Hakata DEITOS (after car pickup)</span><span class="sub">Light tonkotsu, firm noodles, yakimeshi · ~¥900 · Inside Hakata Station · Open daily</span><br><span class="highlight" style="margin-top:8px;display:block">Dinner — Local Tosu Izakaya</span><span class="sub">Yakitori, sashimi, cold beer · ~¥3,000/person</span></td>
+      </tr>
+      <tr>
+        <td contenteditable="false" style="outline: none;">DAY 2<br>Thu</td>
+        <td contenteditable="false" style="outline: none;">
+          <span class="highlight">Lunch — Kurodahan, Daimyo ⭐ 4.9★</span><span class="sub">Bluefin tuna bowl · otoro · mixed maguro bowl · ~¥2,000–3,000 · Thu ✅ · <strong>⚠️ Walk-in queue</strong></span><br>
+          <span class="highlight" style="margin-top:8px;display:block">Dinner — Nakasu Yatai (6pm) + Nakasu Oden (8:30pm)</span><span class="sub">Mentaiko · yakitori · sake · everyone drinks freely · ~¥5,000–7,000/person total</span>
+        </td>
+      </tr>
+      <tr>
+        <td contenteditable="false" style="outline: none;">DAY 3<br>Fri</td>
+        <td contenteditable="false" style="outline: none;">
+          <span class="highlight">Lunch — Hamayaki Shirahamaya, Keya Port ⭐</span><span class="sub">Gas BBQ oysters, scallops, Goto prawns · ocean terrace · no smoke smell · <strong>⚠️ Book: +81 92-328-3282</strong> · ~¥3,000–5,000</span><br>
+          <span class="highlight" style="margin-top:8px;display:block">Coffee — Beach Cafe SUNSET (ocean view)</span><br>
+          <span class="highlight" style="margin-top:8px;display:block">Dinner — Neighbourhood izakaya near Tosu · ~¥3,000</span>
+        </td>
+      </tr>
+      <tr>
+        <td contenteditable="false" style="outline: none;">DAY 4<br>Sat</td>
+        <td contenteditable="false" style="outline: none;">
+          <span class="highlight">Lunch — Koda Shokudo, Nagasaki ⭐</span><span class="sub">Fishmonger-run · sashimi set ¥1,500 · Nagasaki aji · ask for uni if available · 11:30am–2pm only · Sat ✅</span><br><span class="highlight" style="margin-top:8px;display:block">Dinner — Inasa-yama restaurant (top of ropeway) or Tosu izakaya on return ~10pm</span>
+        </td>
+      </tr>
+      <tr>
+        <td contenteditable="false" style="outline: none;">DAY 5<br>Sun</td>
+        <td contenteditable="false" style="outline: none;">
+          <span class="highlight">Lunch — Fresh Ika Sashimi, Karatsu Harbour</span><span class="sub">Ultra-fresh squid — Karatsu's signature · ~¥1,500–2,500</span><br>
+          <span class="highlight" style="margin-top:8px;display:block">Dinner — Yanagawa Unaju (Grilled Eel over Rice)</span><span class="sub">Riverside restaurant · Yanagawa's iconic dish · ~¥2,000–3,000</span>
+        </td>
+      </tr>
+      <tr>
+        <td contenteditable="false" style="outline: none;">DAY 6<br>Mon</td>
+        <td contenteditable="false" style="outline: none;">
+          <span class="highlight">Lunch — Restaurant Yurari at Hyotan Onsen</span><span class="sub">Ryukyu raw fish rice bowl ¥1,300 · or jigoku steam crab legs · Oita beef bowl ¥1,200</span><br>
+          <span class="highlight" style="margin-top:8px;display:block">Snack — Onsen Steam Pudding + Kabosu Soft Serve (~¥800)</span><br>
+          <span class="highlight" style="margin-top:8px;display:block">Snack — Wagyu beef skewer, Yunotsubo Kaido, Yufuin (~¥500)</span><br>
+          <span class="highlight" style="margin-top:8px;display:block">Dinner — Robata grill or seafood izakaya near Tosu · ~¥3,500</span>
+        </td>
+      </tr>
+      <tr>
+        <td contenteditable="false" style="outline: none;">DAY 7<br>Tue</td>
+        <td contenteditable="false" style="outline: none;">
+          <span class="highlight">Lunch —&nbsp; Food court at Tosu outlet or Hakata-ya, Kurume Tonkotsu Ramen</span><span class="sub">Thicker and richer than Hakata style — the original · ~¥800 · Open 24hrs</span><br>
+          <span class="highlight" style="margin-top:8px;display:block">Dinner — Restaurants at the Airport</span>
+        </td>
+      </tr>
+    </tbody></table>
+  </div>
+
+  <!-- ONSEN SUMMARY -->
+  <div class="section-heading">
+    <h2>Onsen &amp; Bathhouse Summary</h2>
+    <div class="section-line"></div>
+    <div class="section-kanji">温泉</div>
+  </div>
+
+  <div class="summary-card">
+    <div class="summary-card-header onsen">
+      <div class="summary-icon">♨️</div>
+      <div class="summary-card-title">All 7 Days — Onsen Rotation</div>
+    </div>
+    <table class="summary-table">
+      <tbody><tr>
+        <td contenteditable="false" style="outline: none;">DAY 1</td>
+        <td contenteditable="false" style="outline: none;">
+          <span class="highlight">筑紫野温泉 アマンディ — Chikushino</span>
+          <span class="sub">Bali-inspired garden onsen · multiple pools · private rooms available · restaurant on-site</span>
+          <div><span class="onsen-entry">~¥800</span> <span class="onsen-entry">20 min from Tosu</span> <span class="onsen-entry">10am–midnight</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td contenteditable="false" style="outline: none;">DAY 2</td>
+        <td contenteditable="false" style="outline: none;">
+          <span class="highlight">Minato Onsen Namiha no Yu — Fukuoka city</span>
+          <span class="sub">Multiple pools · sauna · bay night views · Thursday = ladies discount</span>
+          <div><span class="onsen-entry">~¥1,250</span> <span class="onsen-entry">In Fukuoka</span> <span class="onsen-entry">10am–11pm</span></div>
+          <a class="map-link" style="margin-top:4px" href="https://maps.google.com/?cid=7354804000981347588" target="_blank">📍 Map</a>
+        </td>
+      </tr>
+      <tr>
+        <td contenteditable="false" style="outline: none;">DAY 3</td>
+        <td contenteditable="false" style="outline: none;">
+          <span class="highlight">Yunosakakurume Hot Spring — Kurume</span>
+          <span class="sub">Local public onsen · outdoor garden bath with waterfall · sauna · very local crowd · silky water</span>
+          <div><span class="onsen-entry">~¥880</span> <span class="onsen-entry">30 min south of Tosu</span> <span class="onsen-entry">10am–1am</span></div>
+          <a class="map-link" style="margin-top:4px" href="https://maps.google.com/?cid=17301970214843314909" target="_blank">📍 Map</a>
+        </td>
+      </tr>
+      <tr>
+        <td contenteditable="false" style="outline: none;">DAY 4</td>
+        <td contenteditable="false" style="outline: none;">
+          <span class="highlight">Izuminoyu Kurume — Private Group Pool</span>
+          <span class="sub">Private indoor + outdoor pool for group · silky mineral water · tattoo friendly · very late hours</span>
+          <div><span class="onsen-entry">~¥1,200/group</span> <span class="onsen-entry">25 min from Tosu</span> <span class="onsen-entry">10am–3am</span></div>
+          <a class="map-link" style="margin-top:4px" href="https://maps.google.com/?cid=15538976350885431489" target="_blank">📍 Map</a>
+        </td>
+      </tr>
+      <tr>
+        <td contenteditable="false" style="outline: none;">DAY 5</td>
+        <td contenteditable="false" style="outline: none;">
+          <span class="highlight">筑紫野温泉 アマンディ — Second Visit</span>
+          <span class="sub">On the way home from Yanagawa · Bali-inspired garden onsen · relaxed Sunday evening soak</span>
+          <div><span class="onsen-entry">~¥800</span> <span class="onsen-entry">20 min from Tosu</span> <span class="onsen-entry">10am–midnight</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td contenteditable="false" style="outline: none;">DAY 6</td>
+        <td contenteditable="false" style="outline: none;">
+          <span class="highlight">Hyotan Onsen — Beppu ⭐ Michelin 3-Star</span>
+          <span class="sub">Public baths split by gender · ♀ open-air, waterfall, steam, gourd-shaped hyotan tub · ♂ 9 baths including sand bath, waterfall, steam, cold plunge · No booking needed · Allow 1.5 hrs minimum</span>
+          <div><span class="onsen-entry">¥1,020/person</span> <span class="onsen-entry">+¥760 sand bath</span> <span class="onsen-entry">In Beppu</span> <span class="onsen-entry">9am–midnight</span></div>
+          <a class="map-link" style="margin-top:4px" href="https://maps.google.com/?cid=8899495308519393039" target="_blank">📍 Map</a>
+        </td>
+      </tr>
+      <tr>
+        <td contenteditable="false" style="outline: none;">DAY 7</td>
+        <td contenteditable="false" style="outline: none;">
+          <span class="highlight">Izuminoyu Kurume — Farewell Soak</span>
+          <span class="sub">After checkout, before outlets · private group pool · store luggage in car · open from 10am</span>
+          <div><span class="onsen-entry">~¥1,200/group</span> <span class="onsen-entry">25 min from Tosu</span> <span class="onsen-entry">10am–3am</span></div>
+        </td>
+      </tr>
+    </tbody></table>
+  </div>
+
+</div>
+
+
+<script>
+  // Toggle day open / closed
+  function toggleDay(header) {
+    const body   = header.nextElementSibling;
+    const toggle = header.querySelector('.day-toggle');
+    body.classList.toggle('open');
+    toggle.classList.toggle('open');
+  }
+
+  // Expand / collapse all days
+  function expandAll() {
+    const total   = document.querySelectorAll('.day-body').length;
+    const allOpen = document.querySelectorAll('.day-body.open').length === total;
+    document.querySelectorAll('.day-body').forEach(b =>
+      allOpen ? b.classList.remove('open') : b.classList.add('open')
+    );
+    document.querySelectorAll('.day-toggle').forEach(t =>
+      allOpen ? t.classList.remove('open') : t.classList.add('open')
+    );
+    document.getElementById('expand-btn').textContent =
+      allOpen ? 'Expand All' : 'Collapse All';
+  }
+
+  // Share button — native share on mobile, copy link on desktop
+  function shareItinerary() {
+    const data = {
+      title: '九州の旅 — Kyushu Journey April 2026',
+      text:  '7-day self-drive itinerary: Fukuoka, Itoshima, Nagasaki, Karatsu, Yanagawa, Beppu & Yufuin.',
+      url:   window.location.href
+    };
+    if (navigator.share) {
+      navigator.share(data).catch(() => {});
+    } else {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        const btn = document.getElementById('share-btn');
+        const orig = btn.textContent;
+        btn.textContent = '✓ Copied!';
+        btn.style.background = '#3d6b7a';
+        setTimeout(() => { btn.textContent = orig; btn.style.background = '#b8860b'; }, 2000);
+      });
+    }
+  }
+
+  // Open Day 1 by default
+  document.querySelectorAll('.day-body')[0].classList.add('open');
+  document.querySelectorAll('.day-toggle')[0].classList.add('open');
+
+  // Open all days when printing / saving as PDF
+  window.addEventListener('beforeprint', () => {
+    document.querySelectorAll('.day-body').forEach(b => b.classList.add('open'));
+    document.querySelectorAll('.day-toggle').forEach(t => t.classList.add('open'));
+  });
+</script>
+
+
+
+
+<!-- FOOTER -->
+<div style="background:#1a1410;color:rgba(245,240,232,0.35);text-align:center;padding:32px 40px;margin-top:48px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;line-height:2;">
+  <div style="color:#b8860b;font-size:14px;margin-bottom:8px;font-family:'Shippori Mincho',serif;">九州の旅</div>
+  9–15 APRIL 2026  ·  TOSU BASE  ·  SELF-DRIVE KYUSHU<br>
+  HK EXPRESS UO668  /  UO695  ·  TIMES CAR RENTAL  ·  HONDA FREED
+</div>
+</body></html>
